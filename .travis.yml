@@ -8,11 +8,10 @@ compiler:
   - gcc
 
 before_install:
-  - sudo apt-get update
   - sudo apt-get install -y bmake
 
 script:
   - bmake -r
-  - bmake -r test
+  - SID=echo bmake -r test # no need to install SID just for make test
   - bmake -r install
 
