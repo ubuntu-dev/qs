@@ -1,0 +1,18 @@
+sudo: required
+dist: trusty
+language: c
+sudo: false
+
+compiler:
+  - clang
+  - gcc
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y bmake
+
+script:
+  - bmake -r
+  - bmake -r test
+  - bmake -r install
+
